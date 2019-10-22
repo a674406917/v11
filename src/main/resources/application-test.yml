@@ -1,0 +1,3 @@
+#配置公共的东西测试时候的
+resources:
+  imageServer: http://image2.qf.com测试

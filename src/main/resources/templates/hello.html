@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+模板
+
+<span th:text="${username}">VIP</span><br/>
+<!--<span  src="" th:src="${url}" th/>
+<input type="text" value="" th:value="${valus}">-->
+<!--三种组合标签-->
+欢迎:<span th:text="${username}"></span><br/>
+欢迎:<span th:text="超级VIP+${username}"></span><br/>
+欢迎:<span th:text="|超级VIP,${username}|"></span><br/>
+<span th:text="${user.name}"></span>
+<!--if判断-->
+<span th:if="${money>50000}">小康家庭</span>
+<!--ubless就相当于else上面的条件不成立的时候将会运行-->
+<span th:unless="${money>50000}">贫困户</span>
+<!--三元运算符-->
+<span th:text="${age>18 ? '长大了':'未成年'}"></span>
+<!--循环-->
+<table>
+    <tr>
+        <td>id</td>
+        <td>name</td>
+    </tr>
+    <tr th:each="user:${list}">
+            <td th:text="${user.id}"> ID</td>
+        <td th:text="${user.name}">Name</td>
+    </tr>
+
+
+</table>
+<input th:value="${#dates.format(now,'yyyy-MM-dd HH:mm:ss')}"/>
+</body>
+</html>

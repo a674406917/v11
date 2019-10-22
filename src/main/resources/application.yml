@@ -1,0 +1,32 @@
+#配置公共的东西
+server:
+  port: 8080
+  #在主配置中可以选择到底选择那个配置文件
+spring:
+  profiles:
+    active: dev
+    #配置数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/java1907?useUnicode=true&characterEncoding=utf-8&serverTimezone=UTC
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    date-format: yyyy-MM-dd
+#mybatis中扫描mapper的路径
+mybatis:
+  mapper-locations: classpath:/mapper/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+      #控制日志的输出级别
+
+#logging:
+  #level:
+   # root: info
+      #控制日志输出的路径
+#  file: d://logs//all.log
+#mybatis.configuration.log-impl=org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
+
